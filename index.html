@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- https://atb.az/ -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="section_btns">
+      <button class="kredit_btn selected_btn"><i class="fa-solid fa-money-check-dollar"></i> nagd krediti hesabla</button>
+      <button class="emanet_btn non_selected_btn"><i class="fa-solid fa-vault"></i> emanet uzre geliri hesabla</button>
+    </div>
+    <section id="bankProses">
+      <div id="kredit" class="kredit">
+        <div class="offer">
+          <div class="amount_offer">
+            <div class="range_offer">
+              <p class="range_text">Hansi mebleg arzunuzu reallasdirar?</p>
+              <div class="amount_view">
+                <p class="amoun_result"></p>
+                <span> AZN</span>
+              </div>
+              <input class="amount_range" oninput="amountChoose()" type="range" min="300" max="40000" step="100"
+                value="5400" />
+            </div>
+            <div class="amoun_limit">
+              <p>300</p>
+              <p>40000</p>
+            </div>
+          </div>
+          <div class="month_offer">
+            <div>
+              <div class="range_offer">
+                <p class="range_text">muddeti secin</p>
+                <div class="month_view">
+                  <p class="month_result"></p>
+                  <span>ay</span>
+                </div>
+                <input class="month_range" oninput="monthChoose()" type="range" min="3" max="48" step="1" value="12" />
+              </div>
+            </div>
+            <div class="month_limit">
+              <p>3 ay</p>
+              <p>48 ay</p>
+            </div>
+          </div>
+        </div>
+        <div class="netice">
+          <h3>Bizim teklif</h3>
+          <div class="result_view">
+            <div class="faiz">
+              <div>fazi derecesi</div>
+              <div class="faiz_view">
+                <p class="percent">14.5</p>
+                <span>%</span>
+              </div>
+            </div>
+            <div class="ayliq">
+              <div>ayliq odenis</div>
+              <div class="ayliq_view">
+                <p class="pay"></p>
+                <span>₼</span>
+              </div>
+            </div>
+          </div>
+          <div class="sfr_btn">
+            <button>sifaris</button>
+          </div>
+        </div>
+      </div>
+      <div id="emanet" class="emanet hidden">
+        <div class="secim_box">
+          <div class="input_box">
+            <select id="valuta" onchange="VSelected()">
+              <option value="valyuta">valyuta</option>
+              <option value="AZN">AZN</option>
+              <option value="USD">USD</option>
+            </select>
+            <select id="odenis" onchange="OSelected()">
+              <option value="faizlerinOdenisi">faizlerin odenilmesi</option>
+              <option value="sonOdenis">muddetin sonunda</option>
+              <option value="ayliqOdenis">ayliq odenis</option>
+            </select>
+            <select id="month" onchange="AySelected()">
+              <option value="muddet">muddet</option>
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="36">36</option>
+            </select>
+            <input type="number" class="mebleg" placeholder="mebleg (min. 1000 AZN/USD*)" oninput="miqdarYaz()">
+          </div>
+          <div class="faizAyliqNetice">
+            <p class="verilecek_faiz">faizler - ayliq </br> 0% - 0 AZN</p>
+          </div>
+        </div>
+        <div class="sfr_btn">
+          <button>sifaris et</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
