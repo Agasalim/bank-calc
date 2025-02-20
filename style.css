@@ -253,6 +253,7 @@ select:focus, input:focus {border-color: #4e8ef7;}
         flex-direction: column;
         gap: 15px;
     }
+    .faizAyliqNetice {width: 100%;}
     .faiz, .ayliq {width: 100%;}
     .input_box select, .input_box input{width: 100%;}
 }
